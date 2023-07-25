@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inserta la etiqueta <audio> con la canción y atributos de reproducción automática y loop -->
+        <audio id="mi-cancion" loop>
+            <source src="elementos/cancion.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+            // Función para detener la canción al salir de la página
+        function detenerCancion() {
+            var miCancion = document.getElementById('mi-cancion');
+            miCancion.pause(); // Pausar la reproducción
+            miCancion.currentTime = 0; // Reiniciar la reproducción al inicio
+        }
+
+        // Agrega el evento para detener la canción al salir de la página
+        window.addEventListener('beforeunload', detenerCancion);
+
+        // Reproducir la canción al hacer clic en cualquier lugar de la página
+        document.addEventListener('click', function () {
+            var miCancion = document.getElementById('mi-cancion');
+            miCancion.play();
+            // Eliminar el evento click para que la canción no se inicie múltiples veces
+            document.removeEventListener('click', arguments.callee);
+        });
+        </script>
+    
+        
+    <section id="portada">
+        <div class="container-portada">
+
+        </div>
+        <div class="linea"></div>
+        
+    </section>
+    <section id="nuestra-boda">
+        <div class="titulo">
+            <h5>
+                <img src="elementos/karinajuan.svg" alt="" class="kj-imagen">
+            </h5>
+            <h4 class="nuestra-boda">Nuestra Boda</h4>
+            <p class="subtitulo"> 20-Abril-2024</p>
+        </div>
+        <div class="frase-container">
+            <p class="frase">Solamente la <br>
+            mano de Dios <br>
+        podrá separarnos. <br></p>
+        <p class="autor">(Jose Alfredo Jimenez)</p>
+        </div>
+        <div class="nombres">
+            <p>En compañia de nuestros padres</p>
+            <div class="novios">
+                <img src="elementos/novia.svg" alt="vest ido novia" class="vestido">
+                <p class="negritas"> María de los Ángeles López Martínez<br>Melquiades Castro Martínez
+                </p>
+            </div>
+            <div class="novios">
+                <img src="elementos/novio.svg" alt="saco novio" class="vestido">
+                <p class="negritas">Juana Leos Delgado<br>Carlos Bañales ALvarez
+                </p>
+            </div>
+            <p>y de nuestros padrinos</p>
+            <p class="negritas"> Guadalupe Veronica Zárate Patiño<br> Arturo Estrada Eslava</p>
+            <p>uniremos nuestras vidas en matrimonio</p>
+        </div>
+        <div class="fecha">
+            <div class="container-fecha">
+                <img src="elementos/anillos.svg" alt="" class="anillo">
+                <p> Tenemos el honor de invitarlos a nuestra<br>
+                ceremonia religiosa que se llevara acabo el día</p>
+                <p class="importante">
+                    Sádado 20 <br>de Abril del 2024
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="lugar">
+        <div class="ceremonia">
+            <p class="importante">Ceremonia</p>
+            <p class="negritas-dos"> Parroquia San Pedro Apostol</p>
+            <p>Plaza Virreinal #100 San Martín C.P. 549600 <br>Tepotzotlán Edo Mex.</p>
+            <p class="importante"> 14:30 hrs.</p>
+            <div class="btn-container">
+                <a href="https://goo.gl/maps/ikRKY13vE7FasrY9A" class="enlace-invitacion">
+                    <button class="btn-invitacion">Ver mapa</button>
+                </a>
+            </div>
+        </div>
+        <div class="evento">
+            <p class="importante"> Evento</p>
+            <p>Mariano Galvan Rivera #38 <br> Barrio Tlacateco Tepotzotlán Edo Mex.</p>
+            <p class="importante">16:30 hrs.</p>
+            <div class="btn-container">
+                <a href="https://goo.gl/maps/q4psra5NMBhZjGXE6" class="enlace-invitacion">
+                    <button class="btn-invitacion">Ver mapa</button>
+                </a>
+            </div>
+            <p class="ruta">Ruta de acceso recomendada desde los arcos de Tepotzotlán</p>
+            <div class="btn-container">
+                <a href="https://goo.gl/maps/4rtwAivnNcKAwPUJ6" class="enlace-invitacion">
+                    <button class="btn-invitacion">Ver mapa</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="recomendaciones">
+        <div class="ceremonia">
+            <p class="importante">Recomendaciones para el evento</p>
+            <p>-Es en epoca de calor tomalo en cuenta para tu vestimenta. <br> <br>
+                -Mujeres llevar tacon ancho por el empedrado de la iglesia.</p>
+        </div>
+    </section>
+    
+    
+    
+</body>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+            html,
+            body{
+                font-family: 'Montserrat', sans-serif;
+                background: url('/elementos/bg-marmol.png' );
+                background-size:auto;
+                background-size: cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;                
+                
+            }
+            h4{
+                font-family: 'Bitter', serif;
+                font-weight:300;
+                font-size: 8vmax;
+                color: #D38027;
+            }
+            p{
+                font-size: 2vmax;
+                font-style: italic;
+            }
+            .negritas{
+                font-weight: 600;
+            }
+            .importante{
+                font-size: 3vmax;
+                font-weight: 800;
+            }
+            .linea{
+                height: 10px;
+                background-image: linear-gradient(to right, #D4A03A, #D38027, #FFD16C, #DA9B34); /* Define el degradado */
+            background-size: 100% 10px; /* Ancho y alto del degradado, el alto es el grosor del borde */
+            background-repeat: no-repeat;
+            background-position: bottom; /* Ubicación del degradado en la parte inferior */
+
+            }
+            .container-portada{
+                background: url('/elementos/portada-iglesia.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 40vmax;
+                
+            }
+            #nuestra-boda{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: url('/elementos/flores-pequeñas-03.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .titulo{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-top: 20%;
+                padding-bottom: 10%;
+            background-image: linear-gradient(to right, #D4A03A, #D38027, #FFD16C, #DA9B34); /* Define el degradado */
+            background-size: 80% 1px; /* Ancho y alto del degradado, el alto es el grosor del borde */
+            background-repeat: no-repeat;
+            background-position: bottom; /* Ubicación del degradado en la parte inferior */
+
+            }
+            .kj-imagen{
+                width: 50vw;
+            }
+            .nuestra-boda{
+                padding-top: 10%;
+                font-style: italic;
+            }
+            .subtitulo{
+                color: #D38027;
+                font-weight: 300;
+                font-size: 4vmax;
+            }
+            .frase-container{
+                padding: 30px 0px;
+                background-image: linear-gradient(to right, #D4A03A, #D38027, #FFD16C, #DA9B34); /* Define el degradado */
+            background-size: 80% 1px; /* Ancho y alto del degradado, el alto es el grosor del borde */
+            background-repeat: no-repeat;
+            background-position: bottom; /* Ubicación del degradado en la parte inferior */
+
+            }
+            .frase{
+                font-size: 5vmax;
+                font-weight: 300;
+                font-style: italic;
+                padding-top: 10%;
+                padding-bottom: 3%;
+            }
+            .autor{
+                font-size: 2vmax;
+                padding-bottom: 10%;
+            }
+            .nombres{
+                padding: 10%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                background-image: linear-gradient(to right, #D4A03A, #D38027, #FFD16C, #DA9B34); /* Define el degradado */
+            background-size: 80% 1px; /* Ancho y alto del degradado, el alto es el grosor del borde */
+            background-repeat: no-repeat;
+            background-position: bottom; /* Ubicación del degradado en la parte inferior */
+
+            
+            }
+            .anillo{
+                width: 20%;
+            }
+            .vestido{
+                width: 5vmax;
+                margin: 10px;
+            }
+            .container-fecha{
+                padding: 0% 7%;
+                display: flex;
+                flex-direction: column;
+                gap: 3vmax;
+                justify-content: center;
+                align-items: center;
+                padding: 10%;
+            }
+            #lugar{
+                padding: 0% 10%;
+            }
+            .fecha{
+                background-image: linear-gradient(to right, #D4A03A, #D38027, #FFD16C, #DA9B34); /* Define el degradado */
+            background-size: 100% 4px; /* Ancho y alto del degradado, el alto es el grosor del borde */
+            background-repeat: no-repeat;
+            background-position: bottom; /* Ubicación del degradado en la parte inferior */
+            padding-top: 10% 0%;
+            }
+            .ceremonia, .evento{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2vmax;
+                text-align: center;
+                padding: 5%;
+            }
+            .negritas-dos{
+                font-size: 2.4vmax;
+                font-weight: 600;
+            }
+            .btn-invitacion{
+                background-color: #EF364C ;
+                color: #fff;
+                text-align: center;
+                border-radius: 20vmax;
+                padding: 1vmax 5vmax;
+                border: none;
+                cursor: pointer;
+                font-size: 1vmax;
+            }
+            .ruta{
+                font-weight: 600;
+                padding-top: 6vmax;
+                padding-bottom: 1vmax;
+            }
+
+    </style>
+</html>
